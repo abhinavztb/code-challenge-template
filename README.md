@@ -1,5 +1,5 @@
 # Code Challenge Template
-Problem 1 - Data Modeling
+## Problem 1 - Data Modeling
 
 -------------------------
 
@@ -12,7 +12,7 @@ We use sqlite to form our data model and generate DDL statements for creating We
 
 
 
-Problem 2 - Ingestion
+## Problem 2 - Ingestion
 
 ---------------------
 
@@ -20,7 +20,7 @@ Write code to ingest the weather data from the raw text files supplied into your
 
 **For Solution, refer to the following script: answers/P2Ingest.py**
 
-Problem 3 - Data Analysis
+## Problem 3 - Data Analysis
 
 -------------------------
 
@@ -39,7 +39,7 @@ We define a new data model - WeatherAnalysis Table in the wx_data.db database.
 Then we analyze the pre-existing loaded data in WeatherData to process and load it into the WeatherAnalysis table.
 **Refer to the script: answers/P3WeatherAnalysis.py**
 
-Problem 4 - REST API
+## Problem 4 - REST API
 
 --------------------
 
@@ -54,45 +54,45 @@ Your answer should include all files necessary to run your API locally, along wi
 *Solution*
 This Flask application effectively addresses Problem 4 by creating a REST API that serves weather data. Here's how it solves each part of the problem:
 
-### REST API Creation with Flask
+#### REST API Creation with Flask
 
 - **Flask and Flask-RESTful** are used to set up and define the REST API. Flask-RESTful simplifies API creation with resource-based classes.
 
-### Endpoints
+#### Endpoints
 
 - **Two GET endpoints** (`/api/weather` and `/api/weather/stats`) are defined, corresponding to fetching weather data and weather statistics, respectively.
 
-### JSON Responses
+#### JSON Responses
 
 - Both endpoints **return JSON-formatted responses**, aligning with the requirement for the API to output data in a structured and easily consumable format for clients.
 
-### Query String Filtering
+#### Query String Filtering
 
 - The API allows clients to **filter responses based on query string parameters** (e.g., `station_id`, `start_date`, `end_date`, `year`). This feature enhances the API's flexibility, allowing users to retrieve specific subsets of data.
 
-### Pagination
+#### Pagination
 
 - The `/api/weather` endpoint incorporates **pagination**, a crucial feature for APIs that can potentially return large sets of data. Pagination improves performance and usability by limiting the number of records in a single response and allowing clients to fetch data incrementally.
 
-### Database Integration
+#### Database Integration
 
 - Utilizing **SQLite through direct connections**, the API interacts with a database to fetch weather data and statistics. While SQLite is simple and sufficient for demonstration purposes or lightweight applications, this approach showcases how to execute raw SQL queries within a Flask application.
 
-### Swagger UI Documentation
+#### Swagger UI Documentation
 
 - **Swagger (Flasgger)** integration provides automatic API documentation, making the API easier to use and understand. The `@swag_from` decorators reference YAML files that contain the OpenAPI specifications for each endpoint, offering a self-documenting API that users can interact with through a generated web interface.
 
 **Refer to the script: answers/P4api.py**
 
 
-### Unit Test Cases
+#### Unit Test Cases
 We wrote test cases in the testcases.py
 
 
 **Refer to the script: answers/testcases.py**
 
 
-Deployment
+## Deployment
 
 -------------------------
 
