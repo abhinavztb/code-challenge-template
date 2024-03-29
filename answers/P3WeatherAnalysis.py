@@ -36,7 +36,6 @@ print(f"Database initialized with WeatherAnalysis table at {db_path}")
 
 
 def calculate_weather_statistics(db_path):
-    # Connect to the SQLite database
     try:
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
