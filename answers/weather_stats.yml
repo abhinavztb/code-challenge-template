@@ -1,0 +1,43 @@
+get:
+  summary: "Get weather statistics"
+  description: "Retrieve aggregated weather statistics for a specific station and year."
+  parameters:
+    - name: "station_id"
+      in: "query"
+      description: "Station identifier"
+      required: false
+      type: "string"
+    - name: "year"
+      in: "query"
+      description: "Year of the statistics"
+      required: false
+      type: "integer"
+  responses:
+    200:
+      description: "Weather statistics for the station"
+      schema:
+        type: "object"
+        properties:
+          data:
+            type: "array"
+            items:
+              $ref: "#/definitions/WeatherStats"
+definitions:
+  WeatherStats:
+    type: "object"
+    properties:
+      station_id:
+        type: "string"
+        example: "USC00110072"
+      year:
+        type: "integer"
+        example: 1985
+      avg_max_temp:
+        type: "number"
+        example: 22.5
+      avg_min_temp:
+        type: "number"
+        example: 15.3
+      total_precipitation:
+        type: "number"
+        example: 12.5
